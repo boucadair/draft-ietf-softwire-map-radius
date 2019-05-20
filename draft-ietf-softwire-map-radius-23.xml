@@ -62,78 +62,6 @@
       </address>
     </author>
 
-    <author fullname="Bing Liu" initials="B." surname="Liu">
-      <organization>Huawei Technologies Co., Ltd</organization>
-
-      <address>
-        <postal>
-          <street>Q14, Huawei Campus, No.156 Beiqing Road</street>
-
-          <city>Hai-Dian District, Beijing, 100095</city>
-
-          <country>P.R. China</country>
-        </postal>
-
-        <email>leo.liubing@huawei.com</email>
-      </address>
-    </author>
-
-    <author fullname="Peter Deacon" initials="P." surname="Deacon">
-      <organization>IEA Software, Inc.</organization>
-
-      <address>
-        <postal>
-          <street>P.O. Box 1170</street>
-
-          <city>Veradale</city>
-
-          <region>WA</region>
-
-          <code>99037</code>
-
-          <country>USA</country>
-        </postal>
-
-        <email>peterd@iea-software.com</email>
-      </address>
-    </author>
-
-    <author fullname="Chongfeng Xie" initials="C." surname="Xie">
-      <organization>China Telecom</organization>
-
-      <address>
-        <postal>
-          <street></street>
-
-          <city>Beijing</city>
-
-          <code></code>
-
-          <country>P.R. China</country>
-        </postal>
-
-        <email>xiechf.bri@chinatelecom.cn</email>
-      </address>
-    </author>
-
-    <author fullname="Tianxiang Li" initials="T" surname="Li">
-      <organization>Tsinghua University</organization>
-
-      <address>
-        <postal>
-          <street></street>
-
-          <city>Beijing</city>
-
-          <code>100084</code>
-
-          <country>P.R.China</country>
-        </postal>
-
-        <email>peter416733@gmail.com</email>
-      </address>
-    </author>
-
     <author fullname="Mohamed Boucadair" initials="M. " role="editor"
             surname="Boucadair">
       <organization>Orange</organization>
@@ -1533,47 +1461,81 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-len
 
     <section title="Contributing Authors">
       <figure>
-        <artwork><![CDATA[Qiong Sun
-China Telecom
-Beijing  China
-Email: sunqiong@ctbri.com.cn
+        <artwork><![CDATA[   Bing Liu
+   Huawei Technologies Co., Ltd
+   Q14, Huawei Campus, No.156 Beiqing Road
+   Hai-Dian District, Beijing, 100095
+   P.R. China
 
-Qi Sun
-Tsinghua University
-Department of Computer Science, Tsinghua University
-Beijing 100084
-P.R.China
-Phone: +86-10-6278-5822
-Email: sunqibupt@gmail.com
+   Email: leo.liubing@huawei.com
 
-Cathy Zhou
-Huawei Technologies
-Bantian, Longgang District
-Shenzhen 518129
-Email: cathy.zhou@huawei.com
+   Peter Deacon
+   IEA Software, Inc.
+   P.O. Box 1170
+   Veradale, WA  99037
+   USA
 
-Tina Tsou
-Huawei Technologies(USA)
-2330 Central Expressway
-Santa Clara, CA 95050
-USA
-Email: Tina.Tsou.Zouting@huawei.com
+   Email: peterd@iea-software.com
 
-ZiLong Liu
-Tsinghua University
-Beijing 100084
-P.R.China
-Phone: +86-10-6278-5822
-Email: liuzilong8266@126.com
+   Chongfeng Xie
+   China Telecom
+   Beijing
+   P.R. China
 
-Yong Cui
-Tsinghua University
-Beijing 100084
-P.R.China
-Phone: +86-10-62603059
-Email: yong@csnet1.cs.tsinghua.edu.cn
+   Email: xiechf.bri@chinatelecom.cn
 
-    ]]></artwork>
+   Tianxiang Li
+   Tsinghua University
+   Beijing  100084
+   P.R.China
+
+   Email: peter416733@gmail.com
+
+   Qiong Sun
+   China Telecom
+   Beijing  China
+
+   Email: sunqiong@ctbri.com.cn
+
+   Qi Sun
+   Tsinghua University
+   Department of Computer Science, Tsinghua University
+   Beijing 100084
+   P.R.China
+   Phone: +86-10-6278-5822
+   
+   Email: sunqibupt@gmail.com
+
+   Cathy Zhou
+   Huawei Technologies
+   Bantian, Longgang District
+   Shenzhen 518129
+   
+   Email: cathy.zhou@huawei.com
+
+   Tina Tsou
+   Huawei Technologies(USA)
+   2330 Central Expressway
+   Santa Clara, CA 95050
+   USA
+
+   Email: Tina.Tsou.Zouting@huawei.com
+
+   ZiLong Liu
+   Tsinghua University
+   Beijing 100084
+   P.R.China
+   Phone: +86-10-6278-5822
+
+   Email: liuzilong8266@126.com
+
+   Yong Cui
+   Tsinghua University
+   Beijing 100084
+   P.R.China
+   Phone: +86-10-62603059
+
+   Email: yong@csnet1.cs.tsinghua.edu.cn    ]]></artwork>
       </figure>
     </section>
 
