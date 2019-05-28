@@ -5,16 +5,14 @@
 Softwire                                                   S. Jiang, Ed.
 Internet-Draft                              Huawei Technologies Co., Ltd
 Intended status: Standards Track                              Y. Fu, Ed.
-Expires: November 24, 2019                                         CNNIC
-                                                               P. Deacon
-                                                      IEA Software, Inc.
+Expires: November 28, 2019                                         CNNIC
                                                                   C. Xie
                                                            China Telecom
                                                                    T. Li
                                                      Tsinghua University
                                                        M. Boucadair, Ed.
                                                                   Orange
-                                                            May 23, 2019
+                                                            May 27, 2019
 
 
 RADIUS Attributes for Address plus Port (A+P) based Softwire Mechanisms
@@ -49,21 +47,21 @@ Status of This Memo
    working documents as Internet-Drafts.  The list of current Internet-
    Drafts is at https://datatracker.ietf.org/drafts/current/.
 
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
 
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019               [Page 1]
+Jiang, Ed., et al.      Expires November 28, 2019               [Page 1]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
-   Internet-Drafts are draft documents valid for a maximum of six months
-   and may be updated, replaced, or obsoleted by other documents at any
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 24, 2019.
+   This Internet-Draft will expire on November 28, 2019.
 
 Copyright Notice
 
@@ -106,16 +104,16 @@ Table of Contents
          3.1.5.2.  Bind-IPv6-Prefix Attribute  . . . . . . . . . . .  17
        3.1.6.  Attributes for S46-PORTPARAMS . . . . . . . . . . . .  18
          3.1.6.1.  PSID-Offset Attribute . . . . . . . . . . . . . .  18
+         3.1.6.2.  PSID-Len Attribute  . . . . . . . . . . . . . . .  19
+         3.1.6.3.  PSID Attribute  . . . . . . . . . . . . . . . . .  19
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019               [Page 2]
+Jiang, Ed., et al.      Expires November 28, 2019               [Page 2]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
-         3.1.6.2.  PSID-Len Attribute  . . . . . . . . . . . . . . .  19
-         3.1.6.3.  PSID Attribute  . . . . . . . . . . . . . . . . .  19
      3.2.  Softwire46-Priority Attribute . . . . . . . . . . . . . .  20
        3.2.1.  Softwire46-Option-Code  . . . . . . . . . . . . . . .  21
      3.3.  Softwire46-Multicast Attribute  . . . . . . . . . . . . .  22
@@ -138,14 +136,14 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
      A.1.  OPTION_S46_RULE (89) to Softwire46-Rule Sub-TLV Field
            Mappings  . . . . . . . . . . . . . . . . . . . . . . . .  35
      A.2.  OPTION_S46_BR (90) to Softwire46-BR Field Mappings  . . .  35
-     A.3.  OPTION_S46_DMR (91) to Softwire46-DMR . . . . . . . . . .  36
+     A.3.  OPTION_S46_DMR (91) to Softwire46-DMR . . . . . . . . . .  35
      A.4.  OPTION_S46_V4V6BIND (92) to Softwire46-V4V6Bind . . . . .  36
      A.5.  OPTION_S46_PORTPARAMS (93) to Softwire46-PORTPARAMS Field
            Mappings  . . . . . . . . . . . . . . . . . . . . . . . .  36
      A.6.  OPTION_S46_PRIORITY (111) to Softwire46-PORTPARAMS Field
            Mappings  . . . . . . . . . . . . . . . . . . . . . . . .  36
      A.7.  OPTION_V6_PREFIX64 (113) to Softwire46-Multicast
-           Attribute Field Mappings  . . . . . . . . . . . . . . . .  37
+           Attribute Field Mappings  . . . . . . . . . . . . . . . .  36
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  37
 
 1.  Introduction
@@ -161,18 +159,17 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
    For each of these mechanisms, DHCPv6 options have been specified for
    client configuration.
 
+   In many networks, user configuration information is stored in an
+   Authentication, Authorization, and Accounting (AAA) server.  AAA
+   servers generally communicate using the Remote Authentication Dial In
 
 
 
-
-Jiang, Ed., et al.      Expires November 24, 2019               [Page 3]
+Jiang, Ed., et al.      Expires November 28, 2019               [Page 3]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
-   In many networks, user configuration information is stored in an
-   Authentication, Authorization, and Accounting (AAA) server.  AAA
-   servers generally communicate using the Remote Authentication Dial In
    User Service (RADIUS) [RFC2865] protocol.  In a fixed broadband
    network, a Broadband Network Gateway (BNG) acts as the access gateway
    for users.  That is, the BNG acts as both an AAA client to the AAA
@@ -221,7 +218,10 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019               [Page 4]
+
+
+
+Jiang, Ed., et al.      Expires November 28, 2019               [Page 4]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -277,7 +277,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019               [Page 5]
+Jiang, Ed., et al.      Expires November 28, 2019               [Page 5]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -333,7 +333,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019               [Page 6]
+Jiang, Ed., et al.      Expires November 28, 2019               [Page 6]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -389,7 +389,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019               [Page 7]
+Jiang, Ed., et al.      Expires November 28, 2019               [Page 7]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -445,7 +445,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019               [Page 8]
+Jiang, Ed., et al.      Expires November 28, 2019               [Page 8]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -501,7 +501,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019               [Page 9]
+Jiang, Ed., et al.      Expires November 28, 2019               [Page 9]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -557,7 +557,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 10]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 10]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -613,7 +613,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 11]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 11]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -669,7 +669,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 12]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 12]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -725,7 +725,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 13]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 13]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -781,7 +781,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 14]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 14]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -837,7 +837,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 15]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 15]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -893,7 +893,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 16]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 16]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -949,7 +949,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 17]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 17]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1005,7 +1005,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 18]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 18]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1061,7 +1061,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 19]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 19]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1117,7 +1117,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 20]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 20]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1173,7 +1173,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 21]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 21]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1229,7 +1229,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 22]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 22]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1285,7 +1285,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 23]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 23]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1341,7 +1341,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 24]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 24]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1397,7 +1397,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 25]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 25]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1453,7 +1453,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 26]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 26]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1509,7 +1509,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 27]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 27]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1565,7 +1565,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 28]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 28]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1621,7 +1621,7 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 29]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 29]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
@@ -1634,8 +1634,8 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
    Permitted in the Softwire46-Priority Attribute".
 
    The value of option code corresponds to the TLV-Type defined in
-   Section 3.1.1.  Additional options may be added to this list in the
-   future using the IETF Review process described in Section 4.8 of
+   Section 3.1.1.  Additional option codes may be added to this list in
+   the future using the IETF Review process described in Section 4.8 of
    [RFC8126].
 
    Table 4 shows the initial version of allowed option codes, and the
@@ -1677,26 +1677,12 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 30]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 30]
 
 Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
    Email: peterd@iea-software.com
-
-   Chongfeng Xie
-   China Telecom
-   Beijing
-   P.R. China
-
-   Email: xiechf.bri@chinatelecom.cn
-
-   Tianxiang Li
-   Tsinghua University
-   Beijing  100084
-   P.R.China
-
-   Email: peter416733@gmail.com
 
    Qiong Sun
    China Telecom
@@ -1730,14 +1716,6 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
    ZiLong Liu
    Tsinghua University
-
-
-
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 31]
-
-Internet-Draft            A+P RADIUS Attributes                 May 2019
-
-
    Beijing 100084
    P.R.China
    Phone: +86-10-6278-5822
@@ -1751,6 +1729,14 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
    Phone: +86-10-62603059
 
    Email: yong@csnet1.cs.tsinghua.edu.cn
+
+
+
+
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 31]
+
+Internet-Draft            A+P RADIUS Attributes                 May 2019
+
 
 9.  Acknowledgements
 
@@ -1786,14 +1772,6 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
               RFC 3162, DOI 10.17487/RFC3162, August 2001,
               <https://www.rfc-editor.org/info/rfc3162>.
 
-
-
-
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 32]
-
-Internet-Draft            A+P RADIUS Attributes                 May 2019
-
-
    [RFC3575]  Aboba, B., "IANA Considerations for RADIUS (Remote
               Authentication Dial In User Service)", RFC 3575,
               DOI 10.17487/RFC3575, July 2003,
@@ -1808,6 +1786,13 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
               Li, "IPv6 Addressing of IPv4/IPv6 Translators", RFC 6052,
               DOI 10.17487/RFC6052, October 2010,
               <https://www.rfc-editor.org/info/rfc6052>.
+
+
+
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 32]
+
+Internet-Draft            A+P RADIUS Attributes                 May 2019
+
 
    [RFC6158]  DeKok, A., Ed. and G. Weber, "RADIUS Design Guidelines",
               BCP 158, RFC 6158, DOI 10.17487/RFC6158, March 2011,
@@ -1843,13 +1828,6 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
               RFC 8126, DOI 10.17487/RFC8126, June 2017,
               <https://www.rfc-editor.org/info/rfc8126>.
 
-
-
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 33]
-
-Internet-Draft            A+P RADIUS Attributes                 May 2019
-
-
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
@@ -1859,6 +1837,18 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
               "Dynamic Host Configuration Protocol for IPv6 (DHCPv6)",
               RFC 8415, DOI 10.17487/RFC8415, November 2018,
               <https://www.rfc-editor.org/info/rfc8415>.
+
+
+
+
+
+
+
+
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 33]
+
+Internet-Draft            A+P RADIUS Attributes                 May 2019
+
 
 10.2.  Informative References
 
@@ -1894,18 +1884,6 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
               Stack Lite Architecture", RFC 7596, DOI 10.17487/RFC7596,
               July 2015, <https://www.rfc-editor.org/info/rfc7596>.
 
-
-
-
-
-
-
-
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 34]
-
-Internet-Draft            A+P RADIUS Attributes                 May 2019
-
-
    [RFC7597]  Troan, O., Ed., Dec, W., Li, X., Bao, C., Matsushima, S.,
               Murakami, T., and T. Taylor, Ed., "Mapping of Address and
               Port with Encapsulation (MAP-E)", RFC 7597,
@@ -1917,6 +1895,16 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
               Configuration of Softwire Address and Port-Mapped
               Clients", RFC 7598, DOI 10.17487/RFC7598, July 2015,
               <https://www.rfc-editor.org/info/rfc7598>.
+
+
+
+
+
+
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 34]
+
+Internet-Draft            A+P RADIUS Attributes                 May 2019
+
 
    [RFC7599]  Li, X., Bao, C., Dec, W., Ed., Troan, O., Matsushima, S.,
               and T. Murakami, "Mapping of Address and Port using
@@ -1950,18 +1938,6 @@ A.1.  OPTION_S46_RULE (89) to Softwire46-Rule Sub-TLV Field Mappings
 
 A.2.  OPTION_S46_BR (90) to Softwire46-BR Field Mappings
 
-
-
-
-
-
-
-
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 35]
-
-Internet-Draft            A+P RADIUS Attributes                 May 2019
-
-
              +---------------------+------------------------+
              | OPTION_S46_BR Field | Softwire46-BR Subfield |
              +---------------------+------------------------+
@@ -1976,6 +1952,15 @@ A.3.  OPTION_S46_DMR (91) to Softwire46-DMR
              |   dmr-prefix6-len   |     dmr-prefix6-len     |
              |   dmr-ipv6-prefix   |     dmr-ipv6-prefix     |
              +---------------------+-------------------------+
+
+
+
+
+
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 35]
+
+Internet-Draft            A+P RADIUS Attributes                 May 2019
+
 
 A.4.  OPTION_S46_V4V6BIND (92) to Softwire46-V4V6Bind
 
@@ -2008,16 +1993,6 @@ A.6.  OPTION_S46_PRIORITY (111) to Softwire46-PORTPARAMS Field Mappings
    |      s46-option-code      |         Softwire46-option-code        |
    +---------------------------+---------------------------------------+
 
-
-
-
-
-
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 36]
-
-Internet-Draft            A+P RADIUS Attributes                 May 2019
-
-
 A.7.  OPTION_V6_PREFIX64 (113) to Softwire46-Multicast Attribute Field
       Mappings
 
@@ -2032,6 +2007,16 @@ A.7.  OPTION_V6_PREFIX64 (113) to Softwire46-Multicast Attribute Field
    |   unicast-length   |          U-Prefix64          | Prefix-Length |
    |     uPrefix64      |          U-Prefix64          |   u-prefix64  |
    +--------------------+------------------------------+---------------+
+
+
+
+
+
+
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 36]
+
+Internet-Draft            A+P RADIUS Attributes                 May 2019
+
 
 Authors' Addresses
 
@@ -2051,27 +2036,6 @@ Authors' Addresses
    P.R. China
 
    Email: eleven711711@foxmail.com
-
-
-   Peter Deacon
-   IEA Software, Inc.
-   P.O. Box 1170
-   Veradale, WA  99037
-   USA
-
-   Email: peterd@iea-software.com
-
-
-
-
-
-
-
-
-
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 37]
-
-Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
    Chongfeng Xie
@@ -2105,24 +2069,4 @@ Internet-Draft            A+P RADIUS Attributes                 May 2019
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Jiang, Ed., et al.      Expires November 24, 2019              [Page 38]
+Jiang, Ed., et al.      Expires November 28, 2019              [Page 37]

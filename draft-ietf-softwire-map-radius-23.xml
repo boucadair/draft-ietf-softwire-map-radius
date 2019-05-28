@@ -62,26 +62,6 @@
       </address>
     </author>
 
-    <author fullname="Peter Deacon" initials="P." surname="Deacon">
-      <organization>IEA Software, Inc.</organization>
-
-      <address>
-        <postal>
-          <street>P.O. Box 1170</street>
-
-          <city>Veradale</city>
-
-          <region>WA</region>
-
-          <code>99037</code>
-
-          <country>USA</country>
-        </postal>
-
-        <email>peterd@iea-software.com</email>
-      </address>
-    </author>
-
     <author fullname="Chongfeng Xie" initials="C." surname="Xie">
       <organization>China Telecom</organization>
 
@@ -144,8 +124,6 @@
         <uri></uri>
       </address>
     </author>
-
-    <!--FIX AUTHOTS LIST///UPDATE CONTRIBUTORS SECTION-->
 
     <date month="May" year="2019" />
 
@@ -1482,11 +1460,11 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
         <t>The Softwire46-Priority Attribute conveys an ordered list of option
         codes assigned to Softwire64 mechanisms, for which IANA is requested
         to create and maintain a new registry entitled "Option Codes Permitted
-        in the Softwire46-Priority Attribute". </t>
+        in the Softwire46-Priority Attribute".</t>
 
         <t>The value of option code corresponds to the TLV-Type defined in
-        <xref target="s46-tlvs"></xref>. Additional options may be added to
-        this list in the future using the IETF Review process described in
+        <xref target="s46-tlvs"></xref>. Additional option codes may be added
+        to this list in the future using the IETF Review process described in
         Section 4.8 of <xref target="RFC8126"></xref>.</t>
 
         <t>Table 4 shows the initial version of allowed option codes, and the
@@ -1529,20 +1507,6 @@ Veradale, WA  99037
 USA
 
 Email: peterd@iea-software.com
-
-Chongfeng Xie
-China Telecom
-Beijing
-P.R. China
-
-Email: xiechf.bri@chinatelecom.cn
-
-Tianxiang Li
-Tsinghua University
-Beijing  100084
-P.R.China
-
-Email: peter416733@gmail.com
 
 Qiong Sun
 China Telecom
