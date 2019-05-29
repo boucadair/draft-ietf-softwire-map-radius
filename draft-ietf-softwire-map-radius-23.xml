@@ -181,8 +181,8 @@
 
       <t>Since IPv4-in-IPv6 softwire configuration information is stored in an
       AAA server, and user configuration information is mainly transmitted
-      through DHCPv6 protocol between the BNGs and Customer Premises Equipment
-      (CEs, a.k.a., CPE), new RADIUS attributes are needed to propagate the
+      through DHCPv6 between the BNGs and Customer Premises Equipment (CEs,
+      a.k.a., CPE), new RADIUS attributes are needed to propagate the
       information from the AAA servers to BNGs.</t>
 
       <t>The RADIUS attributes defined in this document provide configuration
@@ -192,15 +192,15 @@
       <t><list style="symbols">
           <t>"Mapping of Address and Port with Encapsulation (MAP-E)" <xref
           target="RFC7597"></xref> (DHCPv6 options defined in <xref
-          target="RFC7598"></xref>.</t>
+          target="RFC7598"></xref>).</t>
 
           <t>"Mapping of Address and Port using Translation (MAP-T)" <xref
           target="RFC7599"></xref> (DHCPv6 options defined in <xref
-          target="RFC7598"></xref>.</t>
+          target="RFC7598"></xref>).</t>
 
           <t>"Lightweight 4over6: An Extension to the Dual-Stack Lite
           Architecture" <xref target="RFC7596"></xref> (DHCPv6 options defined
-          in <xref target="RFC7598"></xref>.</t>
+          in <xref target="RFC7598"></xref>).</t>
 
           <t>"Unified IPv4-in-IPv6 Softwire Customer Premises Equipment (CPE):
           A DHCPv6-Based Prioritization Mechanism" <xref
@@ -208,7 +208,7 @@
 
           <t>"Delivery of IPv4 Multicast Services to IPv4 Clients over an IPv6
           Multicast Network" <xref target="RFC8114"></xref> (DHCPv6 options
-          defined in <xref target="RFC8115"></xref>.</t>
+          defined in <xref target="RFC8115"></xref>).</t>
         </list></t>
 
       <t>The contents of the attributes defined in this document have a 1:1
@@ -257,8 +257,6 @@
       <t>Softwire46 (S46) is used throughout to denote any of the IPv4-in-IPv6
       softwire mechanisms listed above. Additionally, the following
       abbreviations are used within the document:<list style="symbols">
-          <t>BMR: Basic Mapping Rule</t>
-
           <t>BNG: Broadband Network Gateway</t>
 
           <t>BR: Border Relay</t>
@@ -267,9 +265,7 @@
 
           <t>DMR: Default Mapping Rule</t>
 
-          <t>EA: Embedded Address</t>
-
-          <t>FMR: Forwarding Mapping Rule</t>
+          <t>lwAFTR: Lightweight AFTR</t>
 
           <t>PSID: Port Set Identifier</t>
 
@@ -664,7 +660,7 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
       dmr-ipv6-prefix. A variable-length (dmr-prefix6-len) field 
       specifying the IPv6 prefix for the BR. This field is right-padded
       with zeros to the nearest octet boundary when dmr-prefix6-len 
-      is not divisible by 8. Prefixes with from 0 to 96 are allowed.
+      is not divisible by 8. Prefixes with length from 0 to 96 are allowed.
 ]]></artwork>
             </figure>
           </section>
@@ -879,11 +875,11 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
           </section>
         </section>
 
-        <section title="Attributes for S46-PORTPARAMS">
+        <section title="Attributes for Softwire46-PORTPARAMS">
           <section title="PSID-Offset Attribute">
             <t>This attribute is used to convey the Port Set Identifier offset
             as defined in <xref target="RFC7597"></xref>. This attribute is
-            encoded 32 bits as per the recommendation in Appendix A.2.1 of
+            encoded in 32 bits as per the recommendation in Appendix A.2.1 of
             <xref target="RFC6158"></xref>.</t>
 
             <t>The structure of PSID-Offset is shown below:</t>
@@ -914,8 +910,8 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
 
           <section title="PSID-Len Attribute">
             <t>This attribute is used to convey the PSID length as defined in
-            <xref target="RFC7597"></xref>. This attribute is encoded 32 bits
-            as per the recommendation in Appendix A.2.1 of <xref
+            <xref target="RFC7597"></xref>. This attribute is encoded in 32
+            bits as per the recommendation in Appendix A.2.1 of <xref
             target="RFC6158"></xref>.</t>
 
             <t>The structure of PSID-Len is shown below:</t>
@@ -946,8 +942,8 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
 
           <section title="PSID Attribute">
             <t>This attribute is used to convey the PSID as defined in <xref
-            target="RFC7597"></xref>. This attribute is encoded 32 bits as per
-            the recommendation in Appendix A.2.1 of <xref
+            target="RFC7597"></xref>. This attribute is encoded in 32 bits as
+            per the recommendation in Appendix A.2.1 of <xref
             target="RFC6158"></xref>.</t>
 
             <t>The structure of PSID is shown below:</t>
@@ -977,7 +973,7 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
 
       <section anchor="s46-prio-attr" title="Softwire46-Priority Attribute">
         <t>The Softwire46-Priority Attribute includes an ordered list of
-        Softwire64 mechanisms allowing the client to prioritize which
+        Softwire46 mechanisms allowing the client to prioritize which
         mechanism to use, corresponding to OPTION_S46_PRIORITY defined in
         <xref target="RFC8026"></xref>. The following requirements apply:</t>
 
@@ -1022,8 +1018,8 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
 
         <section anchor="opc" title="Softwire46-Option-Code">
           <t>This attribute is used to convey an option code assigned to a
-          Softwire64 mechanism <xref target="RFC8026"></xref>. This attribute
-          is encoded 32 bits as per the recommendation in Appendix A.2.1 of
+          Softwire46 mechanism <xref target="RFC8026"></xref>. This attribute
+          is encoded in 32 bits as per the recommendation in Appendix A.2.1 of
           <xref target="RFC6158"></xref>.</t>
 
           <t>The structure of Softwire46-Option-Code is shown below:</t>
@@ -1326,11 +1322,11 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
           this Access-Request message.</t>
 
           <t>For Lightweight 4over6, the subscriber's binding state needs to
-          be synchronized between the clients and the lwAFTR/BR. This can be
-          achieved in two ways: static pre-configuration of the bindings on
-          both the AAA server and lwAFTR, or on-demand whereby the AAA server
-          updates the lwAFTR with the subscriber's binding state as it is
-          created or deleted.</t>
+          be synchronized between the clients and the Lightweight AFTR
+          (lwAFTR)/BR. This can be achieved in two ways: static
+          pre-configuration of the bindings on both the AAA server and lwAFTR,
+          or on-demand whereby the AAA server updates the lwAFTR with the
+          subscriber's binding state as it is created or deleted.</t>
         </list></t>
 
       <t>In some deployments, the DHCP server may use the Accounting-Request
@@ -1372,26 +1368,43 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
     </section>
 
     <section anchor="Security" title="Security Considerations">
-      <t>Known security vulnerabilities of the RADIUS protocol are discussed
-      in <xref target="RFC2607"></xref>, <xref target="RFC2865"></xref>,
-      and<xref target="RFC2869"></xref>. Use of IPsec <xref
+      <t>Section 9 of <xref target="RFC7596"></xref> discusses security issues
+      related to Lightweight 4over6, Section 10 of <xref
+      target="RFC7597"></xref> discusses security issues related to MAP-E,
+      Section 13 of <xref target="RFC7599"></xref> discusses security issues
+      related to MAP-T, and Section 9 of <xref target="RFC8114"></xref>
+      discusses security issues related to the delivery of IPv4 multicast
+      services to IPv4 clients over an IPv6 multicast network.</t>
+
+      <t>This document does not introduce any security issue other than the
+      ones already identified in RADIUS documents <xref
+      target="RFC2865"></xref> and <xref target="RFC5176"></xref> for CoA
+      messages. Known security vulnerabilities of the RADIUS protocol
+      discussed in <xref target="RFC2607"></xref>, <xref
+      target="RFC2865"></xref>, and <xref target="RFC2869"></xref> apply to
+      this specification. </t>
+
+      <t>This document targets deployments where a trusted relationship is in
+      place between the RADIUS client and server with communication optionally
+      secured by IPsec or Transport Layer Security (TLS) <xref
+      target="RFC6614"></xref>. The use of IPsec <xref
       target="RFC4301"></xref> for providing security when RADIUS is carried
       in IPv6 is discussed in <xref target="RFC3162"></xref>.</t>
 
-      <t>Specific security considerations for interactions between the MAP CE
-      and the BNG are discussed in <xref target="RFC7597"></xref> and <xref
-      target="RFC7599"></xref>. Security considerations for Lightweight 4over6
-      are discussed in <xref target="RFC7596"></xref>. Security considerations
-      for DHCPv6-Based Softwire46 Prioritization Mechanism are discussed in
-      <xref target="RFC8026"></xref>. Security considerations for multicast
-      scenarios are discussed in <xref target="RFC8114"></xref>. Furthermore,
-      generic DHCPv6 security mechanisms can be applied to DHCPv6
-      intercommunication between the CE and the BNG.</t>
+      <t>Security considerations for interactions between a Softwire46 CE and
+      the BNG are discussed in Section 9 of <xref target="RFC7598"></xref>
+      (DHCPv6 options for configuration of softwire46 address and port-mapped
+      clients), Section 3 of <xref target="RFC8026"></xref> (DHCPv6-based
+      Softwire46 prioritization mechanism), and Section 5 of <xref
+      target="RFC8115"></xref> (DHCPv6 options for configuration of
+      IPv4-embedded IPv6 prefixes). </t>
     </section>
 
     <section anchor="IANA" title="IANA Considerations">
       <t>IANA is requested to make new code point assignments for RADIUS
-      attributes as described in the following subsections.</t>
+      attributes as described in the following subsections. The RADIUS
+      registry is available at
+      https://www.iana.org/assignments/radius-types/radius-types.xhtml. </t>
 
       <section title="New RADIUS Attributes">
         <t>This document requests IANA to assign the Attribute Types defined
@@ -1445,7 +1458,7 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
 15     PSID-Offset                     integer      Section 3.1.6.1
 16     PSID-Len                        integer      Section 3.1.6.2
 17     PSID                            integer      Section 3.1.6.3
-18     Softwire64-Option-Code          integer      Section 3.2.1
+18     Softwire46-Option-Code          integer      Section 3.2.1
 19     ASM-Prefix64                    ipv6prefix   Section 3.3.1
 20     SSM-Prefix64                    ipv6prefix   Section 3.3.2
 21     U-Prefix64                      ipv6prefix   Section 3.3.3
@@ -1458,35 +1471,33 @@ e                     | 3.Softwire46-PORTPARAMS  ----+ 2.PSID-Len
 
       <section title="Softwire46 Mechanisms and Their Identifying Option Codes">
         <t>The Softwire46-Priority Attribute conveys an ordered list of option
-        codes assigned to Softwire64 mechanisms, for which IANA is requested
+        codes assigned to Softwire46 mechanisms, for which IANA is requested
         to create and maintain a new registry entitled "Option Codes Permitted
         in the Softwire46-Priority Attribute".</t>
-
-        <t>The value of option code corresponds to the TLV-Type defined in
-        <xref target="s46-tlvs"></xref>. Additional option codes may be added
-        to this list in the future using the IETF Review process described in
-        Section 4.8 of <xref target="RFC8126"></xref>.</t>
 
         <t>Table 4 shows the initial version of allowed option codes, and the
         Softwire46 mechanisms that they represent. The option code for DS-Lite
         is derived from the IANA allocated RADIUS Attribute Type value for
         DS-Lite <xref target="RFC6519"></xref>. The option codes for MAP-E,
-        MAP-T, and Lightweight 4over6 need to be assigned. The option codes
-        for MAP-E, MAP-T, and Lightweight 4over6 should also be used as the
-        TLV-Type values for the MAP-E, MAP-T, and Lightweight 4over6
-        attributes defined in <xref target="s46-tlvs"></xref>.</t>
+        MAP-T, and Lightweight 4over6 are the TLV-Type values for the MAP-E,
+        MAP-T, and Lightweight 4over6 attributes defined in <xref
+        target="s46-tlvs"></xref>.</t>
 
         <figure title="Table 4: Option Codes to S46 Mechanisms">
           <artwork><![CDATA[          +-----------+--------------------+-----------+
           |Option Code|Softwire46 Mechanism| Reference |
           +-----------+--------------------+-----------+
-          |    TBD2   |        MAP-E       |  RFC7597  |
-          |    TBD3   |        MAP-T       |  RFC7599  |
-          |    TBD4   | Lightweight 4over6 |  RFC7596  |
+          |     1     |        MAP-E       |  RFC7597  |
+          |     2     |        MAP-T       |  RFC7599  |
+          |     3     | Lightweight 4over6 |  RFC7596  |
           |    144    |      DS-Lite       |  RFC6519  |
           +-----------+--------------------+-----------+
 ]]></artwork>
         </figure>
+
+        <t>Additional option codes may be added to this list in the future
+        using the IETF Review process described in Section 4.8 of <xref
+        target="RFC8126"></xref>.</t>
       </section>
     </section>
 
@@ -1569,8 +1580,8 @@ Email: yong@csnet1.cs.tsinghua.edu.cn    ]]></artwork>
       <t>This document was produced using the xml2rfc tool <xref
       target="RFC7991"></xref>.</t>
 
-      <t>Many thanks to Al Morton, Bernie Volz, and Joel Halpern for the
-      review.</t>
+      <t>Many thanks to Al Morton, Bernie Volz, Joel Halpern, and Donald
+      Eastlake for the review.</t>
     </section>
   </middle>
 
@@ -1605,10 +1616,14 @@ Email: yong@csnet1.cs.tsinghua.edu.cn    ]]></artwork>
       <?rfc include='reference.RFC.8115'?>
 
       <?rfc include='reference.RFC.8174'?>
+
+      <?rfc include='reference.RFC.5176'?>
     </references>
 
     <references title="Informative References">
       <?rfc include='reference.RFC.2869'?>
+
+      <?rfc include='reference.RFC.6614'?>
 
       <?rfc include='reference.RFC.7596'?>
 
